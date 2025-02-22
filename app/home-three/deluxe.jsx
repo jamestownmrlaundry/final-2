@@ -1,32 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
-import shirtironimg from "../../public/images/shirtiron.jpg"; // Importing local image
-import phantironimg from '../../public/images/phantiron.jpg'
 
 const allServices = [
   {
-    img: shirtironimg,
+    img: "/images/shirtiron.jpg",
     title: "Shirt Ironing",
     des: "Perfectly pressed shirts to keep you looking sharp.",
     time: "12",
     rating: "4.8",
   },
   {
-    img: phantironimg,
+    img: "/images/phantiron.jpg",
     title: "Shirt Wash & Iron",
     des: "Freshly washed and ironed shirts for a crisp look.",
     time: "24",
     rating: "4.9",
   },
   {
-    img: phantironimg,
+    img: "/images/shirtiron.jpg",
     title: "Pant Ironing",
     des: "Expert ironing for wrinkle-free trousers.",
     time: "12",
     rating: "4.7",
   },
   {
-    img: shirtironimg,
+    img: "/images/phantiron.jpg",
     title: "Pant Wash & Iron",
     des: "Complete cleaning and ironing for your trousers.",
     time: "24",
@@ -63,12 +61,8 @@ const LaundryServices = () => {
                 <div className="deluxe__two-item-image">
                   <Link href="/service-details">
                     <div className="image-wrapper">
-                      <Image
-                        src={service.img}
-                        alt={service.title}
-                        layout="fill"
-                        objectFit="cover"
-                      />
+                    <Image src={service.img} alt={service.title} width={300} height={200} />
+
                     </div>
                   </Link>
                 </div>
