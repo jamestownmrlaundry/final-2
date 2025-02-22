@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const allServices = [
@@ -32,8 +31,22 @@ const allServices = [
   },
 ];
 
+const imageContainerStyle = {
+  width: "100%",
+  height: "200px",
+  overflow: "hidden",
+  position: "relative",
+  borderRadius: "10px",
+};
+
+const imageStyle = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+};
+
 const LaundryServices = () => {
-  const featuredServices = allServices.slice(0, 4); // Show only first 4 services
+  const featuredServices = allServices.slice(0, 4);
 
   return (
     <div className="deluxe__two section-padding" id="services">
@@ -60,9 +73,8 @@ const LaundryServices = () => {
               <div className="deluxe__two-item">
                 <div className="deluxe__two-item-image">
                   <Link href="/service-details">
-                    <div className="image-wrapper">
-                    <Image src={service.img} alt={service.title} width={300} height={200} />
-
+                    <div style={imageContainerStyle}>
+                      <img src={service.img} alt={service.title} style={imageStyle} />
                     </div>
                   </Link>
                 </div>
@@ -107,12 +119,6 @@ const LaundryServices = () => {
 
         .deluxe__two-item:hover {
           transform: scale(1.05);
-        }
-
-        .image-wrapper {
-          width: 100%;
-          height: 200px; /* Fixed height for images */
-          position: relative;
         }
 
         .deluxe__two-item-content {
